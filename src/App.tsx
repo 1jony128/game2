@@ -9,23 +9,23 @@ import ButtonShuffle from 'components/ButtonShuffle';
 import SelectGamers from 'components/SelectGamers';
 import CompeleteBlock from 'components/CompeleteBlock';
 
-const init = [
-    {
-        score: 0,
-        name: "Вифлеемская звезда",
-        id: 1
-    },
-    {
-        score: 0,
-        name: "Евреи",
-        id: 2
-    },
-    {
-        score: 0,
-        name: "Книжный свиток",
-        id: 3
-    }
-]
+// const init = [
+//     {
+//         score: 0,
+//         name: "Вифлеемская звезда",
+//         id: 1
+//     },
+//     {
+//         score: 0,
+//         name: "Евреи",
+//         id: 2
+//     },
+//     {
+//         score: 0,
+//         name: "Книжный свиток",
+//         id: 3
+//     }
+// ]
 
 function App() {
     const [cards, setCards] = useState(couples)

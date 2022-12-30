@@ -1,5 +1,5 @@
-import {Dispatch, FC, SetStateAction, useEffect, useState} from 'react';
-import {couples, Icouple} from 'data/couple';
+import {Dispatch, FC, SetStateAction, useEffect} from 'react';
+import {Icouple} from 'data/couple';
 import Card from 'components/Card';
 import {IGroup} from 'models/types';
 
@@ -76,6 +76,7 @@ const Table: FC<TableProps> = ({
             clearTimeout(timer)
         }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cards])
 
     return (

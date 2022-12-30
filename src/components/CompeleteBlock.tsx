@@ -12,7 +12,7 @@ const CompeleteBlock: FC<CompeleteBlockProps> = ({groups, onRestart}) => {
 
     useEffect(() => {
         const arr = [...groups.map(item => item.score)]
-        const max = Math.max.apply(null, [10,12,9])
+        const max = Math.max.apply(null, arr)
         groups.forEach(item => {
             if(item.score === max){
                 setComlete(item.name)

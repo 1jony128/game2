@@ -27,7 +27,7 @@ const Card: FC<CardProps> = ({card, setCards, cards, numberCard}) => {
 
     return (
         <div
-            className={"card "  + `${card.show && "show"} ${card.complete && " complete"}`}
+            className={`card  ${card.show && "show"} ${card.complete && " complete"}`}
             onClick={isTwo.length !== 2 ? onShow : () => {}}
         >
             <span className={"number"}>{!card.show && numberCard}</span>

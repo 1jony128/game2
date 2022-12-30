@@ -1,7 +1,5 @@
 import {Dispatch, FC, SetStateAction} from 'react';
-import ButtonShuffle from 'components/ButtonShuffle';
 import {Icouple} from 'data/couple';
-import SelectGamers from 'components/SelectGamers';
 import {IGroup} from 'models/types';
 import GroupsList from 'components/GroupsList';
 
