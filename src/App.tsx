@@ -30,7 +30,7 @@ import CompeleteBlock from 'components/CompeleteBlock';
 function App() {
     const [cards, setCards] = useState(couples)
     const [groups, setGroups] = useState<IGroup[]>([])
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(0)
     const [complete, setComplete] = useState(false)
 
     const onRestart = () => {
@@ -51,6 +51,8 @@ function App() {
             }))
         ]))
     }
+
+    console.log(step)
 
 
     useEffect(() => {
@@ -79,6 +81,7 @@ function App() {
                        step={step}
                    />
                    <Table
+                       group={groups}
                        cards={cards}
                        setCards={setCards}
                        step={step}

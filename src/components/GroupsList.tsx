@@ -8,6 +8,8 @@ interface GroupsProps {
 }
 
 const GroupsList: FC<GroupsProps> = ({groups, step}) => {
+
+    console.log(groups)
     return (
         <div className={"GroupList"}>
             {groups.map(group =>

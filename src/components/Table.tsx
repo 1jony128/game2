@@ -9,6 +9,7 @@ interface TableProps {
     step: number
     setStep: Dispatch<SetStateAction<number>>
     setGroups: Dispatch<SetStateAction<IGroup[]>>
+    group: IGroup[]
 }
 
 const Table: FC<TableProps> = ({
@@ -17,6 +18,7 @@ const Table: FC<TableProps> = ({
     step,
     setStep,
     setGroups,
+    group,
 }) => {
 
 
@@ -51,8 +53,8 @@ const Table: FC<TableProps> = ({
                 })
             } else {
                 setStep(prev => {
-                    if(prev === 3){
-                        return 1
+                    if(prev === group.length - 1){
+                        return 0
                     }
                     return prev + 1
                 })

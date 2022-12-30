@@ -12,7 +12,7 @@ const SelectGamers: FC<SelectGamersProps> = ({ setGroups }) => {
 
     useEffect(() => {
             const arr = []
-            for(let i = 1; i < count; i++){
+            for(let i = 0; i < count; i++){
                 arr.push(i)
             }
             setInputs(arr)
