@@ -7,7 +7,9 @@ body{
 }
 
 body{
-  background: url("https://media-1obl-ru.storage.yandexcloud.net/resize_cache/831283/149654922413b915fac2096ad9840a34/iblock/1ba/1ba5b81393086a2b3273cc28387125be.jpg");
+  height: 100vh;
+  background: url("https://media-1obl-ru.storage.yandexcloud.net/resize_cache/831283/149654922413b915fac2096ad9840a34/iblock/1ba/1ba5b81393086a2b3273cc28387125be.jpg") no-repeat;
+  background-size: cover;
 }
 
 .table{
@@ -58,6 +60,11 @@ body{
 
 .complete{
   background: #aed0af;
+}
+
+.complete:hover{
+  background: #71cc73;
+  transform: scale(1.1);
 }
 
 .number{
