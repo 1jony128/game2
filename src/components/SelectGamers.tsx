@@ -1,14 +1,13 @@
 import {Dispatch, FC, SetStateAction, useEffect, useState} from 'react';
 import {IGroup} from 'models/types';
+import {useStore} from 'store/useStore';
 
-interface SelectGamersProps {
-    setGroups: Dispatch<SetStateAction<IGroup[]>>
-}
-
-const SelectGamers: FC<SelectGamersProps> = ({ setGroups }) => {
+const SelectGamers: FC = ({  }) => {
     const [count, setCount] = useState<number>(1);
     const [inputs, setInputs] = useState<number[]>([])
     const [values, setValues] = useState<IGroup[]>([])
+
+    const setGroups = useStore(state => state.setGroups)
 
     useEffect(() => {
             const arr = []

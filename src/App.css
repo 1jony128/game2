@@ -27,12 +27,21 @@ body{
   gap: 10px;
 }
 
+.wrapper_card{
+  display: flex;
+  height: 100px;
+  width: 200px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
 .card{
   display: flex;
   border: 1px solid #f0f0f0;
   border-radius: 10px;
   background: #a5a5a5;
-  padding: 10px;
   height: 100px;
   width: 200px;
   align-items: center;
@@ -40,6 +49,45 @@ body{
   cursor: pointer;
   transition: all 0.5s;
   font-size: 40px;
+  animation-duration: 1s;
+  animation-name: Rotate;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@keyframes Rotate {
+  0% {
+    background: #fff;
+    width: 250px;
+  }
+  12.5% {
+    width: 0px;
+  }
+  25% {
+    background: #878686;
+    width: 250px;
+  }
+  37.5% {
+    width: 0px;
+  }
+  50%{
+    background: #fff;
+    width: 250px;
+  }
+  62.5% {
+    width: 0px;
+  }
+  75% {
+    background: #878686;
+    width: 250px;
+  }
+  87.5% {
+    width: 0px;
+  }
+  100%{
+    background: #fff;
+    width: 250px;
+  }
 }
 
 
@@ -75,6 +123,7 @@ body{
   display: flex;
   justify-content: center;
   margin-top: 35px;
+  gap: 10px;
 }
 
 .buttton_shuffle button{
@@ -99,6 +148,16 @@ body{
 
 .buttton_shuffle button:hover{
   background: #3eb73e;
+}
+
+.buttton_shuffle .reset{
+  background: rgba(79, 79, 79, 0.65);
+  color: #fff;
+}
+
+.buttton_shuffle .reset:hover{
+  background: rgb(79, 79, 79);
+  color: #fff;
 }
 
 .Header{

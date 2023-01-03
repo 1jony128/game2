@@ -1,19 +1,16 @@
 import {FC} from "react";
 import {IGroup} from 'models/types';
 import Group from 'components/Group';
+import {useStore} from 'store/useStore';
 
-interface GroupsProps {
-    groups: IGroup[]
-    step: number
-}
+const GroupsList: FC = ({}) => {
 
-const GroupsList: FC<GroupsProps> = ({groups, step}) => {
+    const groups = useStore(state => state.groups)
 
-    console.log(groups)
     return (
         <div className={"GroupList"}>
             {groups.map(group =>
-                <Group key={group.id} group={group} step={step}/>
+                <Group key={group.id} group={group} />
             )}
         </div>
     );

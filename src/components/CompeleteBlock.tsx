@@ -1,14 +1,28 @@
 import {FC, useEffect, useState} from 'react';
 import {IGroup} from 'models/types';
+import {useStore} from 'store/useStore';
+import {useCardsStore} from 'store/useCardsStore';
 
 interface CompeleteBlockProps {
-    groups: IGroup[]
-    onRestart: () => void
+
 }
 
-const CompeleteBlock: FC<CompeleteBlockProps> = ({groups, onRestart}) => {
+const CompeleteBlock: FC<CompeleteBlockProps> = () => {
+
+    const groups = useStore(state => state.groups)
+    const resetGroups = useStore(state => state.resetGroups)
+    const setStep = useStore(state => state.setStep)
+    const setComplete = useStore(state => state.setComplete)
+    const resetCards = useCardsStore(state => state.resetCards)
 
     const [compele, setComlete] = useState<string>("")
+
+    const onRestart = () => {
+        setStep(0)
+        setComplete(false)
+        resetGroups()
+        resetCards()
+    }
 
     useEffect(() => {
         const arr = [...groups.map(item => item.score)]

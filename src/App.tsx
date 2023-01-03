@@ -8,6 +8,8 @@ import {IGroup} from 'models/types';
 import ButtonShuffle from 'components/ButtonShuffle';
 import SelectGamers from 'components/SelectGamers';
 import CompeleteBlock from 'components/CompeleteBlock';
+import {useStore} from 'store/useStore';
+import {useCardsStore} from 'store/useCardsStore';
 
 // const init = [
 //     {
@@ -28,31 +30,11 @@ import CompeleteBlock from 'components/CompeleteBlock';
 // ]
 
 function App() {
-    const [cards, setCards] = useState(couples)
-    const [groups, setGroups] = useState<IGroup[]>([])
-    const [step, setStep] = useState(0)
-    const [complete, setComplete] = useState(false)
-
-    const onRestart = () => {
-        setStep(1)
-        setComplete(false)
-        setGroups(prev => {
-            return [...prev.map(item => {
-                item.score = 0
-                return item
-            })]
-
-        })
-        setCards(prevState => ([
-            ...shuffle(prevState.map(item => {
-                item.show = false
-                item.complete  = false
-                return item
-            }))
-        ]))
-    }
-
-    console.log(step)
+    const groups = useStore(state => state.groups)
+    const setComplete = useStore(state => state.setComplete)
+    const setCards = useCardsStore(state => state.setCards)
+    const cards = useCardsStore(state => state.cards)
+    const complete = useStore(state => state.complete)
 
 
     useEffect(() => {
@@ -64,9 +46,7 @@ function App() {
 
 
     useEffect(() => {
-        setCards(prevState => ([
-            ...shuffle(prevState)
-        ]))
+        setCards()
     }, [])
 
   return (
@@ -74,27 +54,15 @@ function App() {
         {
             groups.length ?
                <>
-                   <Header
-                       cards={cards}
-                       setCards={setCards}
-                       groups={groups}
-                       step={step}
-                   />
-                   <Table
-                       group={groups}
-                       cards={cards}
-                       setCards={setCards}
-                       step={step}
-                       setStep={setStep}
-                       setGroups={setGroups}
-                   />
-                   <ButtonShuffle cards={cards} setCards={setCards}/>
+                   <Header />
+                   <Table />
+                   <ButtonShuffle />
                </>
                 :
-                <SelectGamers setGroups={setGroups} />
+                <SelectGamers />
         }
         {
-            complete && <CompeleteBlock groups={groups} onRestart={onRestart}/>
+            complete && <CompeleteBlock />
         }
 
     </div>

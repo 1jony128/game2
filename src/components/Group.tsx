@@ -1,12 +1,15 @@
 import {FC} from "react";
 import {IGroup} from 'models/types';
+import {useStore} from 'store/useStore';
 
 interface GroupProps {
     group: IGroup
-    step: number
 }
 
-const Group: FC<GroupProps> = ({group, step}) => {
+const Group: FC<GroupProps> = ({group}) => {
+
+    const step = useStore(state => state.step)
+
     return (
         <div className={`Group ${group.id === step && " step"}`}>
            <div className={"name"}>{group.name}: </div>
