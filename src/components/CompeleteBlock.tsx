@@ -1,5 +1,4 @@
 import {FC, useEffect, useState} from 'react';
-import {IGroup} from 'models/types';
 import {useStore} from 'store/useStore';
 import {useCardsStore} from 'store/useCardsStore';
 

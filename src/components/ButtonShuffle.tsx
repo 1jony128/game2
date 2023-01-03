@@ -1,13 +1,11 @@
-import {FC, useState} from 'react';
-import {Icouple} from 'data/couple';
-import {shuffle} from 'helpers/shuffle';
+import {FC} from 'react';
 import {useStore} from 'store/useStore';
 import {useCardsStore} from 'store/useCardsStore';
 
 interface ButtonShuffleProps {
 }
 
-const ButtonShuffle: FC<ButtonShuffleProps> = ({}) => {
+const ButtonShuffle: FC<ButtonShuffleProps> = () => {
 
     const setCards = useCardsStore(state => state.setCards)
 

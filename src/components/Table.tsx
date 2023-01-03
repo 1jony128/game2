@@ -1,4 +1,4 @@
-import {Dispatch, FC, SetStateAction, useEffect} from 'react';
+import { FC, useEffect} from 'react';
 import {Icouple} from 'data/couple';
 import Card from 'components/Card';
 import {useStore} from 'store/useStore';
@@ -7,8 +7,7 @@ import {useCardsStore} from 'store/useCardsStore';
 interface TableProps {
 }
 
-const Table: FC<TableProps> = ({
-}) => {
+const Table: FC<TableProps> = () => {
 
     const groups = useStore(state => state.groups)
     const step = useStore(state => state.step)

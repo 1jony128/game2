@@ -1,8 +1,8 @@
-import {Dispatch, FC, SetStateAction, useEffect, useState} from 'react';
+import {FC, useEffect, useState} from 'react';
 import {IGroup} from 'models/types';
 import {useStore} from 'store/useStore';
 
-const SelectGamers: FC = ({  }) => {
+const SelectGamers: FC = () => {
     const [count, setCount] = useState<number>(1);
     const [inputs, setInputs] = useState<number[]>([])
     const [values, setValues] = useState<IGroup[]>([])

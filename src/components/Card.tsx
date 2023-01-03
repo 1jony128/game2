@@ -1,6 +1,5 @@
 import {FC} from 'react';
 import { Icouple} from 'data/couple';
-import {useStore} from 'store/useStore';
 import {useCardsStore} from 'store/useCardsStore';
 
 interface CardProps {
@@ -27,8 +26,9 @@ const Card: FC<CardProps> = ({card, cards, numberCard}) => {
                 className={`card  ${card.show && "show"} ${card.complete && " complete"}`}
                 onClick={isTwo.length !== 2 ? onShow : () => {}}
             >
-                <span className={"number"}>{!card.show && numberCard}</span>
-                {card.show && card.name}
+                {/*<span className={"number"}>{!card.show && numberCard}</span>*/}
+                {/*{card.show && card.name}*/}
+                {card.name}
             </div>
         </div>
 

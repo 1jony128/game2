@@ -1,9 +1,8 @@
 import {FC} from "react";
-import {IGroup} from 'models/types';
 import Group from 'components/Group';
 import {useStore} from 'store/useStore';
 
-const GroupsList: FC = ({}) => {
+const GroupsList: FC = () => {
 
     const groups = useStore(state => state.groups)
 

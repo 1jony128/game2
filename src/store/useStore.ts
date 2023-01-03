@@ -1,9 +1,6 @@
 import create from 'zustand'
-import {useState} from 'react';
-import {couples, Icouple} from 'data/couple';
 import {IGroup} from 'models/types';
-import {shuffle} from 'helpers/shuffle';
-import { devtools, persist } from 'zustand/middleware'
+import { devtools} from 'zustand/middleware'
 
 interface IStore {
     groups: IGroup[],

@@ -1,10 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import Table from 'components/Table';
 import Header from 'components/Header';
-import {couples} from 'data/couple';
-import {shuffle} from 'helpers/shuffle';
-import {IGroup} from 'models/types';
 import ButtonShuffle from 'components/ButtonShuffle';
 import SelectGamers from 'components/SelectGamers';
 import CompeleteBlock from 'components/CompeleteBlock';
@@ -42,12 +39,12 @@ function App() {
         if(comp.length === cards.length){
             setComplete(true)
         }
-    }, [cards])
+    }, [cards, setComplete])
 
 
     useEffect(() => {
         setCards()
-    }, [])
+    }, [setCards])
 
   return (
     <div className="App">

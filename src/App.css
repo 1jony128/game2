@@ -34,7 +34,6 @@ body{
   padding: 10px;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .card{
@@ -52,7 +51,6 @@ body{
   animation-duration: 1s;
   animation-name: Rotate;
   text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 @keyframes Rotate {
@@ -107,12 +105,29 @@ body{
 }
 
 .complete{
+  animation-duration: 1s;
+  animation-name: Scale;
   background: #aed0af;
 }
 
 .complete:hover{
   background: #71cc73;
   transform: scale(1.1);
+}
+
+@keyframes Scale {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  0% {
+    transform: scale(1.1) rotate(720deg);
+  }
+
+  100%{
+    background: #71cc73;
+    transform: scale(1) rotate(0deg);
+  }
 }
 
 .number{
