@@ -234,9 +234,6 @@ export const couples: Icouple[] = [
   },
 ]
 
-
-const texts = []
-
 export const workers: Icouple[] = [
   {
     'id': 1,
