@@ -19,7 +19,7 @@ const Card: FC<CardProps> = ({card, cards, numberCard}) => {
     const onComplete  = cards.filter(item => !item.complete)
     const isTwo = onComplete.filter(item => item.show)
 
-
+  console.log("ss")
     return (
         <div className={"wrapper_card"}>
             <div
