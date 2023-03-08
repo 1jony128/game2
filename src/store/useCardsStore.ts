@@ -6,10 +6,21 @@ import { devtools } from 'zustand/middleware'
 interface IStore {
     cards: Icouple[],
     setCards: () => void,
+    setCards2: (cards: Icouple[]) => void,
     showCard: (id: number) => void,
     resetCards: () => void,
     completeCard: (id: number) => void
     hideCards: () => void
+}
+
+const setter  = () => {
+    return (state: IStore) => ({ cards: [
+            ...shuffle(state.cards.map(item => {
+                item.show = false
+                item.complete  = false
+                return item
+            }))
+        ] })
 }
 
 
@@ -17,13 +28,11 @@ export const useCardsStore = create<IStore>()(
     devtools(
         (set) => ({
             cards: couples,
-            resetCards: () => set((state) => ({ cards: [
-                    ...shuffle(state.cards.map(item => {
-                        item.show = false
-                        item.complete  = false
-                        return item
-                    }))
-                ] })),
+            resetCards: () => set(setter(),false, "cards/resetCard"),
+            setCards2: (cards) => set((state) => ({ cards: [
+                  ...shuffle(cards)] }),
+              false,
+              'cards/setCards'),
             setCards: () => set((state) => ({ cards: [
                         ...shuffle(state.cards)] }),
                 false,

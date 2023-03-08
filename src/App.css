@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+div{
+    box-sizing: border-box;
+}
 
 body{
   font-family: Geneva, Arial, Helvetica, sans-serif;
@@ -10,12 +13,12 @@ body{
   height: 100vh;
   background: url("https://media-1obl-ru.storage.yandexcloud.net/resize_cache/831283/149654922413b915fac2096ad9840a34/iblock/1ba/1ba5b81393086a2b3273cc28387125be.jpg") no-repeat;
   background-size: cover;
+  user-select: none;
 }
 
 .table{
   margin: 0 auto;
   margin-top: 50px;
-  max-width: 1400px;
   display: flex;
   border: 1px solid #f0f0f0;
   border-radius: 10px;
@@ -29,7 +32,7 @@ body{
 
 .wrapper_card{
   display: flex;
-  height: 100px;
+  height: 70px;
   width: 200px;
   padding: 10px;
   align-items: center;
@@ -41,13 +44,13 @@ body{
   border: 1px solid #f0f0f0;
   border-radius: 10px;
   background: #a5a5a5;
-  height: 100px;
+  height: 70px;
   width: 200px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.5s;
-  font-size: 40px;
+  font-size: 30px;
   animation-duration: 1s;
   animation-name: Rotate;
   text-overflow: ellipsis;
@@ -333,11 +336,31 @@ body{
 
 
 
+.select{
+    cursor: pointer;
+    height: 70px;
+    font-size: 40px;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
 
 
-
-
-
+.bible{
+    position: fixed;
+    top: 20%;
+    left: 25%;
+    height: auto;
+    width: 800px;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    font-size: 40px;
+    background: #626262;
+    color: #fff;
+}
 
 
 

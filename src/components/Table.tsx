@@ -1,5 +1,5 @@
-import { FC, useEffect} from 'react';
-import {Icouple} from 'data/couple';
+import {FC, useEffect, useState} from 'react';
+import {bibles, Icouple} from 'data/couple';
 import Card from 'components/Card';
 import {useStore} from 'store/useStore';
 import {useCardsStore} from 'store/useCardsStore';
@@ -17,6 +17,8 @@ const Table: FC<TableProps> = () => {
     const completeCard = useCardsStore(state => state.completeCard)
     const hideCards = useCardsStore(state => state.hideCards)
 
+    const [selectBible, setSelectBible] = useState<any>("")
+
     const isOverlap = (cards: Icouple[]) => {
         const onComplete  = cards.filter(item => !item.complete)
         const isTwo = onComplete.filter(item => item.show)
@@ -24,6 +26,11 @@ const Table: FC<TableProps> = () => {
 
             if(isTwo[0].group_id === isTwo[1].group_id){
                 addScore()
+                console.log(isTwo[0])
+                const sel = bibles.find(item => item.value === isTwo[0].group_id)
+              if(sel){
+                setSelectBible(sel.text)
+              }
                 completeCard(isTwo[0].group_id)
             } else {
                 const steps = () => {
@@ -51,8 +58,13 @@ const Table: FC<TableProps> = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cards])
 
+  const onClose = () => {
+    setSelectBible("")
+  }
+
     return (
         <div className={"table"}>
+          {selectBible && <div className={'bible'} onClick={onClose}>{selectBible}</div>}
             {
                 cards.map((item, index) => (
                     <Card

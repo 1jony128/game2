@@ -1,6 +1,8 @@
 import {FC, useEffect, useState} from 'react';
 import {IGroup} from 'models/types';
 import {useStore} from 'store/useStore';
+import {useCardsStore} from 'store/useCardsStore';
+import {couples, workers} from 'data/couple';
 
 const SelectGamers: FC = () => {
     const [count, setCount] = useState<number>(1);
@@ -8,6 +10,7 @@ const SelectGamers: FC = () => {
     const [values, setValues] = useState<IGroup[]>([])
 
     const setGroups = useStore(state => state.setGroups)
+    const setCards2 = useCardsStore(state => state.setCards2)
 
     useEffect(() => {
             const arr = []
@@ -29,6 +32,15 @@ const SelectGamers: FC = () => {
 
     const onSubmit = () => {
         setGroups(values)
+    }
+
+    const onSelect = (e: any) => {
+      const value = e.target.value
+      if(value === 2){
+        setCards2(couples)
+      }else {
+        setCards2(workers)
+      }
     }
 
     return (
@@ -54,6 +66,17 @@ const SelectGamers: FC = () => {
 
                 )
             })}
+          <select className={"select"}  onChange={onSelect}>
+            <option disabled>
+              Выберите тип игры
+            </option>
+            <option value={'1'}>
+              Семейные пары
+            </option>
+            <option value={'2'}>
+              Личности - род деятельности
+            </option>
+          </select>
             {values && values?.length > 0 && <button className={"submit_selectGames"} onClick={onSubmit}>Начать игру!</button>}
         </div>
     );
