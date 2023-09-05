@@ -2,7 +2,7 @@ import {FC, useEffect, useState} from 'react';
 import {IGroup} from 'models/types';
 import {useStore} from 'store/useStore';
 import {useCardsStore} from 'store/useCardsStore';
-import {couples, workers} from 'data/couple';
+import {couples, molodej, workers} from 'data/couple';
 
 const SelectGamers: FC = () => {
     const [count, setCount] = useState<number>(1);
@@ -36,10 +36,16 @@ const SelectGamers: FC = () => {
 
     const onSelect = (e: any) => {
       const value = e.target.value
-      if(value === 2){
-        setCards2(couples)
-      }else {
+      console.log(value)
+      if(value === "2"){
+        console.log('род деятельности')
         setCards2(workers)
+      } else if(value === "3"){
+        console.log('молодежь')
+        setCards2(molodej)
+      } else if(value === '1'){
+        console.log(value)
+        setCards2(couples)
       }
     }
 
@@ -75,6 +81,9 @@ const SelectGamers: FC = () => {
             </option>
             <option value={'2'}>
               Личности - род деятельности
+            </option>
+            <option value={'3'}>
+              Молодежь Благовещенска
             </option>
           </select>
             {values && values?.length > 0 && <button className={"submit_selectGames"} onClick={onSubmit}>Начать игру!</button>}

@@ -19,15 +19,15 @@ const Card: FC<CardProps> = ({card, cards, numberCard}) => {
     const onComplete  = cards.filter(item => !item.complete)
     const isTwo = onComplete.filter(item => item.show)
 
-  console.log("ss")
     return (
         <div className={"wrapper_card"}>
             <div
                 className={`card  ${card.show && "show"} ${card.complete && " complete"}`}
                 onClick={isTwo.length !== 2 ? onShow : () => {}}
             >
-                <span className={"number"}>{!card.show && numberCard}</span>
-                {card.show && card.name}
+                {/*<span className={"number"}>{!card.show && numberCard}</span>*/}
+                {/*{card.show && card.name}*/}
+              {card.name}
             </div>
         </div>
 

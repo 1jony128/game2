@@ -10,6 +10,7 @@ interface IStore {
     showCard: (id: number) => void,
     resetCards: () => void,
     completeCard: (id: number) => void
+  completeCard2: (id:number) => void
     hideCards: () => void
 }
 
@@ -55,6 +56,16 @@ export const useCardsStore = create<IStore>()(
                     })] }),
                 false,
                 'cards/completeCard'),
+          completeCard2: (id: number) => set((state) => ({ cards: [...state.cards.map(item => {
+                if(item.id === id){
+                  item.complete = true
+                } else if(!item.complete){
+                  item.show = false
+                }
+                return item
+              })] }),
+            false,
+            'cards/completeCard2'),
             hideCards: () => set((state) => ({ cards: [...state.cards.map(item => {
                         if(!item.complete){
                             item.show = false
