@@ -1071,46 +1071,7 @@ export const molodej: Icouple[] = [
   },
 ]
 
-const arr = ['Новикова', 'Аня',
-  'Новикова', 'Валя',
-  'Тютюнник', 'Алина',
-  'Тютюнник', 'Катя',
-  'Шевцова', 'Юля',
-  'Новиков', 'Андрей',
-  'Новиков', 'Петр',
-  'Тютюнник', 'Иосиф',
-  'Коновалов', 'Юра']
 
-
-// arr.map((item, index) => {
-//   let group_id = 0
-//
-//
-//   if(isEven(index)){
-//     group_id = index + 100
-//   } else {
-//     group_id = index - 1 + 100
-//   }
-//   return {
-//     'id': index + 100,
-//     'name': item,
-//     'show': false,
-//     'group_id': 1000+group_id,
-//     'complete': false
-//   }
-// })
-// function isEven(number: number) {
-//   return number % 2 === 0;
-// }
-// molodej.map((item, index) => {
-//   if(isEven(index)){
-//     item.group_id = index
-//   } else {
-//     item.group_id = index - 1
-//   }
-//
-//   return item
-// })
 export const workers: Icouple[] = [
 
   {

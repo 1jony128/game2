@@ -3,8 +3,6 @@ import {bibles, Icouple} from 'data/couple';
 import Card from 'components/Card';
 import {useStore} from 'store/useStore';
 import {useCardsStore} from 'store/useCardsStore';
-import {isEven} from 'helpers/isEven';
-
 interface TableProps {
 }
 
